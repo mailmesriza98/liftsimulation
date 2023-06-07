@@ -1,0 +1,27 @@
+#lift {
+    width: 100px;
+    height: 200px;
+    background-color: #f2f2f2;
+    position: relative;
+  }
+  
+  .door {
+    width: 50%;
+    height: 100%;
+    background-color: #333;
+    position: absolute;
+    transition: 0.5s;
+  }
+  
+  #left-door {
+    left: 0;
+  }
+  
+  #right-door {
+    right: 0;
+  }
+  
+  button {
+    margin-top: 10px;
+  }
+  

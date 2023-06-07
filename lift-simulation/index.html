@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lift Configuration</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Lift Simulation</h1>
+    <form onsubmit="loadResult(event)">
+      <label for="floors">Enter number of floors</label>
+      <input type="number" id="floors" name="floors" min="1" max="7" required>
+
+      <label for="lifts">Number of Lifts:</label>
+      <input type="number" id="lifts" name="lifts" min="1" max="7" required>
+
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+
+  <script src="indexscript.js"></script>
+</body>
+</html>
