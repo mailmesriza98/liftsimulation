@@ -111,7 +111,7 @@ const createUI = () => {
             
         }
         
-        mainContainer.appendChild(backbutton);
+        
         mainContainer.appendChild(floor); 
        
     }
