@@ -118,12 +118,12 @@ const createUI = () => {
 function resetSimulation() {
     // Reset all variables and clear the HTML elements
     liftQueue=[];
-
-    const floors = document.querySelector("#floors");
-    const lifts = document.querySelector("#lifts");
+    console.log("hii");
+    const floorscontainer = document.querySelector("#floors");
+    const liftscontainer = document.querySelector("#lifts");
     
-    floors.textContent = "";
-    lifts.textContent = "";
+    floorscontainer.innerText = "";
+    liftscontainer.innerText = "";
   
     backbutton.style.display = "none";
   }
