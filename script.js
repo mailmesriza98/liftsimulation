@@ -1,6 +1,7 @@
 const mainContainer = document.querySelector("#main-container");
 const backbutton = document.querySelector("#back_button");
-
+const floorscontainer = document.querySelector("#floors");
+const liftscontainer = document.querySelector("#lifts");
 let liftQueue = [];
 
 const createUI = () => {
@@ -124,8 +125,7 @@ const resetSimulation = ()=> {
 backbutton.addEventListener("click", () => {
     liftQueue=[];
     console.log("hii");
-    const floorscontainer = document.querySelector("#floors");
-    const liftscontainer = document.querySelector("#lifts");
+    
     console.log(floorscontainer);
     floorscontainer.innerText = "";
     liftscontainer.innerText = "";
