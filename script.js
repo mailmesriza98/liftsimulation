@@ -1,4 +1,5 @@
 const mainContainer = document.querySelector("#main-container");
+const backbutton = document.querySelector("#back_button");
 
 let liftQueue = [];
 
@@ -6,8 +7,8 @@ const createUI = () => {
     const floors = document.querySelector("#floors").value;
     const lifts = document.querySelector("#lifts").value;
     mainContainer.innerHTML="";
-    //const backbutton = document.querySelector("#back_button");
-    //backbutton.style.display = "block";
+    
+    backbutton.style.display = "block";
     
 
     for(let i=floors;i>=1;i--){
@@ -105,12 +106,26 @@ const createUI = () => {
             
         }
         
-        
+        mainContainer.appendChild(backbutton)
         mainContainer.appendChild(floor); 
        
     }
 
 };
+
+
+  
+function resetSimulation() {
+    // Reset all variables and clear the HTML elements
+    liftQueue=[];
+    
+    const floors = document.querySelector("#floors").value;
+    const lifts = document.querySelector("#lifts").value;
+    floors.textContent = "";
+    lifts.textContent = "";
+  
+    backbutton.style.display = "none";
+  }
 
 
 const simulate = () => {
@@ -127,6 +142,9 @@ const simulate = () => {
         return;
     }
     createUI();
+    backbutton.addEventListener("click", () => {
+        resetSimulation();
+      });
 
     const buttons = document.getElementsByClassName("button");
  
