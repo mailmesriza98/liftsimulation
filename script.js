@@ -123,16 +123,7 @@ const resetSimulation = ()=> {
     
   }
 
-backbutton.addEventListener("click", () => {
-    liftQueue=[];
-    console.log("hii");
-    backbutton.style.display = "none";
-    // floorscontainer.innerText = "";
-    // liftscontainer.innerText = "";
-    window.history.back();
 
-    
-  });
 
 const simulate = () => {
     
@@ -148,7 +139,17 @@ const simulate = () => {
         return;
     }
     createUI();
-
+    
+    backbutton.addEventListener("click", () => {
+        liftQueue=[];
+        console.log("hii");
+        backbutton.style.display = "none";
+        floorscontainer.textContent = "";
+        liftscontainer.textContent = "";
+        window.history.back();
+    
+        
+      });
     
 
     const buttons = document.getElementsByClassName("button");
