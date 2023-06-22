@@ -6,8 +6,8 @@ const form = document.getElementById("liftform");
 let liftQueue = [];
 
 const createUI = () => {
-    const floors = document.querySelector("#floors").value;
-    const lifts = document.querySelector("#lifts").value;
+    const floors = parseInt(document.querySelector("#floors").value);
+    const lifts = parseInt(document.querySelector("#lifts").value);
     mainContainer.innerHTML="";
     
     backbutton.style.display = "block";
@@ -88,6 +88,21 @@ const createUI = () => {
                 rightDoor.style.backgroundColor = "#1C1F33";
                 rightDoor.style.transition = "width 2s";
                 rightDoor.classList.add('rightdoor');
+
+                // let screenWidth = window.innerWidth || document.documentElement.clientWidth;
+
+                // if (screenWidth <= 480) {
+                //     let Lift = document.querySelector(".lift");
+                //     Lift.style.height = "70px";
+                //     Lift.style.width = "50px";
+
+                //     var doors = document.querySelectorAll(".leftdoor, .rightdoor");
+                //     doors.forEach(function (door) {
+                //         door.style.width = "40px";
+                //         door.style.height = "70px";
+                //         door.style.margin = "0 0.5px";
+                //     });
+                // }
 
                 lift.appendChild(leftDoor);
                 lift.appendChild(rightDoor);
