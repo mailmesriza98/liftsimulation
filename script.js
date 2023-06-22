@@ -2,6 +2,7 @@ const mainContainer = document.querySelector("#main-container");
 const backbutton = document.querySelector("#back_button");
 const floorscontainer = document.querySelector("#floors");
 const liftscontainer = document.querySelector("#lifts");
+const form = document.getElementById("liftform");
 let liftQueue = [];
 
 const createUI = () => {
@@ -125,12 +126,12 @@ const resetSimulation = ()=> {
 backbutton.addEventListener("click", () => {
     liftQueue=[];
     console.log("hii");
-    
-    console.log(floorscontainer);
-    floorscontainer.innerText = "";
-    liftscontainer.innerText = "";
-
     backbutton.style.display = "none";
+    // floorscontainer.innerText = "";
+    // liftscontainer.innerText = "";
+    window.history.back();
+
+    
   });
 
 const simulate = () => {
