@@ -1,20 +1,13 @@
 const mainContainer = document.querySelector("#main-container");
-// var backButton = document.createElement('button');
-// backButton.innerText = 'Change Inputs';
-// button.style.width="100px";
-// button.style.height="50px"
 
-// // Add an event listener to the back button
-// backButton.addEventListener('click', function() {
-//   history.back();
-// });
 let liftQueue = [];
 
 const createUI = () => {
     const floors = document.querySelector("#floors").value;
     const lifts = document.querySelector("#lifts").value;
     mainContainer.innerHTML="";
-   
+    const backbutton = document.querySelector("#back_button");
+    backbutton.style.display = "block";
     if(floors<=1){
         alert("Floors should be >=2");
     } else if(floors<lifts){
@@ -61,12 +54,11 @@ const createUI = () => {
         floor.appendChild(controllerButtons);
         if(i==1){
             //create lift, doors
-            //floor.appendChild(lift,floorNum, upbutton) 
+           
             const liftContainer = document.createElement("div");
             liftContainer.style.display = "flex";
             floor.appendChild(controllerButtons);
-            //liftContainer.style.justifyContent = "space-evenly";
-           // liftContainer.appendChild(controllerButtons); 
+           
             for(let j=1;j<=lifts;j++){
                 const lift = document.createElement("div");
                 lift.style.display = "flex";
@@ -108,25 +100,21 @@ const createUI = () => {
                 floor.appendChild(liftContainer);
 
             }  
-            //liftContainer.appendChild(lift);
-            
             controllerButtons.appendChild(upButton);
             
         } else if(i==floors){
-            //floor.appendChild(doenButton,floorNum)
             controllerButtons.appendChild(downButton);
         } else{
-            //floor.appendChild(upButton, downButton,floorNum)
+        
             controllerButtons.appendChild(upButton);
             controllerButtons.appendChild(downButton);
             
         }
         
-       
+        mainContainer.appendChild(backbutton);
         mainContainer.appendChild(floor); 
        
     }
-   // mainContainer.appendChild(backButton); 
 
 };
 
@@ -136,11 +124,7 @@ const simulate = () => {
     const buttons = document.getElementsByClassName("button");
  
     const lifts = Array.from(document.querySelectorAll(".lift"));
-    
 
-    //setInterval(()=>{
-        
-    // },50);
 
     const calculateNearestLift = (availableLifts, floor) => {
         let minLift = {};
@@ -205,10 +189,6 @@ const simulate = () => {
     setInterval(()=>{
         console.log("liftqueue ",liftQueue);
         if(liftQueue.length>0){
-              
-       //     for(let i=0;i<liftQueue.length;i++){
-              //  console.log(liftQueue);
-               
                 availableLifts = lifts.filter(
                     (lift) => lift.getAttribute("data-status") == "Available"
                   );
