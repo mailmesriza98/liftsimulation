@@ -126,7 +126,7 @@ const resetSimulation = ()=> {
 
 
 const simulate = () => {
-    
+    const floors = document.querySelector("#floors").value;
     const givenlifts = document.querySelector("#lifts").value;
     if(floors<=1){
         alert("Floors should be >=2");
@@ -139,7 +139,7 @@ const simulate = () => {
         return;
     }
     createUI();
-    
+
     backbutton.addEventListener("click", () => {
         liftQueue=[];
         console.log("hii");
