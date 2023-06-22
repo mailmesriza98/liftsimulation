@@ -110,12 +110,13 @@ const createUI = () => {
         mainContainer.appendChild(floor); 
        
     }
+   
 
 };
 
 
   
-function resetSimulation() {
+const resetSimulation = ()=> {
     // Reset all variables and clear the HTML elements
     liftQueue=[];
     console.log("hii");
@@ -144,9 +145,7 @@ const simulate = () => {
     }
     createUI();
 
-    backbutton.addEventListener("click", () => {
-        resetSimulation();
-      });
+   
 
     const buttons = document.getElementsByClassName("button");
  
@@ -214,6 +213,9 @@ const simulate = () => {
     };
 
     setInterval(()=>{
+        backbutton.addEventListener("click", () => {
+            resetSimulation();
+          });
         console.log("liftqueue ",liftQueue);
         if(liftQueue.length>0){
                 availableLifts = lifts.filter(
