@@ -118,15 +118,7 @@ const createUI = () => {
   
 const resetSimulation = ()=> {
     // Reset all variables and clear the HTML elements
-    liftQueue=[];
-    console.log("hii");
-    const floorscontainer = document.getElementById("#floors");
-    const liftscontainer = document.getElementById("#lifts");
-    console.log(floorscontainer);
-    floorscontainer.innerText = "";
-    liftscontainer.innerText = "";
-  
-    backbutton.style.display = "none";
+    
   }
 
 
@@ -145,7 +137,7 @@ const simulate = () => {
     }
     createUI();
 
-   
+    
 
     const buttons = document.getElementsByClassName("button");
  
@@ -213,9 +205,7 @@ const simulate = () => {
     };
 
     setInterval(()=>{
-        backbutton.addEventListener("click", () => {
-            resetSimulation();
-          });
+        
         console.log("liftqueue ",liftQueue);
         if(liftQueue.length>0){
                 availableLifts = lifts.filter(
@@ -234,6 +224,17 @@ const simulate = () => {
          
           //  liftQueue=[];
         }
+        backbutton.addEventListener("click", () => {
+            liftQueue=[];
+            console.log("hii");
+            const floorscontainer = document.querySelector("#floors");
+            const liftscontainer = document.querySelector("#lifts");
+            console.log(floorscontainer);
+            floorscontainer.innerText = "";
+            liftscontainer.innerText = "";
+        
+            backbutton.style.display = "none";
+          });
     },500);
     //check after every 0.2 seconds if there is a liftqueue
 
