@@ -115,13 +115,14 @@ const createUI = () => {
 
 const simulate = () => {
     const floors = document.querySelector("#floors").value;
+    const givenlifts = document.querySelector("#lifts").value;
     if(floors<=1){
         alert("Floors should be >=2");
         return;
-    } else if(floors<lifts){
+    } else if(floors<givenlifts){
         alert("No of lifts cannot be greater than that of floors");
         return;
-    } else if(lifts < 1){
+    } else if(givenlifts < 1){
         alert("There should be atleast 1 lift for the simulation");
         return;
     }
