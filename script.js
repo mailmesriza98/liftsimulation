@@ -121,6 +121,17 @@ const resetSimulation = ()=> {
     
   }
 
+backbutton.addEventListener("click", () => {
+    liftQueue=[];
+    console.log("hii");
+    const floorscontainer = document.querySelector("#floors");
+    const liftscontainer = document.querySelector("#lifts");
+    console.log(floorscontainer);
+    floorscontainer.innerText = "";
+    liftscontainer.innerText = "";
+
+    backbutton.style.display = "none";
+  });
 
 const simulate = () => {
     
@@ -224,17 +235,7 @@ const simulate = () => {
          
           //  liftQueue=[];
         }
-        backbutton.addEventListener("click", () => {
-            liftQueue=[];
-            console.log("hii");
-            const floorscontainer = document.querySelector("#floors");
-            const liftscontainer = document.querySelector("#lifts");
-            console.log(floorscontainer);
-            floorscontainer.innerText = "";
-            liftscontainer.innerText = "";
         
-            backbutton.style.display = "none";
-          });
     },500);
     //check after every 0.2 seconds if there is a liftqueue
 
