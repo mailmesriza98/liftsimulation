@@ -141,8 +141,8 @@ const resetSimulation = ()=> {
 
 
 const simulate = () => {
-    const floors = document.querySelector("#floors").value;
-    const givenlifts = document.querySelector("#lifts").value;
+    const floors = parseInt(document.querySelector("#floors").value);
+    const givenlifts = parseInt(document.querySelector("#lifts").value);
     if(floors<=1){
         alert("Floors should be >=2");
         return;
