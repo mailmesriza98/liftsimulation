@@ -6,14 +6,17 @@ const createUI = () => {
     const floors = document.querySelector("#floors").value;
     const lifts = document.querySelector("#lifts").value;
     mainContainer.innerHTML="";
-    const backbutton = document.querySelector("#back_button");
-    backbutton.style.display = "block";
+    //const backbutton = document.querySelector("#back_button");
+    //backbutton.style.display = "block";
     if(floors<=1){
         alert("Floors should be >=2");
+        return;
     } else if(floors<lifts){
         alert("No of lifts cannot be greater than that of floors");
+        return;
     } else if(lifts < 1){
         alert("There should be atleast 1 lift for the simulation");
+        return;
     }
 
     for(let i=floors;i>=1;i--){
