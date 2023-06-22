@@ -9,7 +9,7 @@ const createUI = () => {
     mainContainer.innerHTML="";
     
     backbutton.style.display = "block";
-    
+    mainContainer.appendChild(backbutton);
 
     for(let i=floors;i>=1;i--){
         const floor = document.createElement("div");
@@ -106,7 +106,7 @@ const createUI = () => {
             
         }
         
-        mainContainer.appendChild(backbutton)
+       
         mainContainer.appendChild(floor); 
        
     }
@@ -118,9 +118,10 @@ const createUI = () => {
 function resetSimulation() {
     // Reset all variables and clear the HTML elements
     liftQueue=[];
+
+    const floors = document.querySelector("#floors");
+    const lifts = document.querySelector("#lifts");
     
-    const floors = document.querySelector("#floors").value;
-    const lifts = document.querySelector("#lifts").value;
     floors.textContent = "";
     lifts.textContent = "";
   
@@ -129,7 +130,7 @@ function resetSimulation() {
 
 
 const simulate = () => {
-    const floors = document.querySelector("#floors").value;
+    
     const givenlifts = document.querySelector("#lifts").value;
     if(floors<=1){
         alert("Floors should be >=2");
@@ -142,6 +143,7 @@ const simulate = () => {
         return;
     }
     createUI();
+
     backbutton.addEventListener("click", () => {
         resetSimulation();
       });
