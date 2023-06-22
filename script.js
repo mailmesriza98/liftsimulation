@@ -142,12 +142,9 @@ const simulate = () => {
 
     backbutton.addEventListener("click", () => {
         liftQueue=[];
-        
-        console.log("hii");
         backbutton.style.display = "none";
-        floorscontainer.innerText = "";
-        liftscontainer.innerText = "";
-        location.reload(true);
+        floorscontainer.value = "";
+        liftscontainer.value = "";
         window.history.back();
         
       });
