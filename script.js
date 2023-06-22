@@ -8,16 +8,7 @@ const createUI = () => {
     mainContainer.innerHTML="";
     //const backbutton = document.querySelector("#back_button");
     //backbutton.style.display = "block";
-    if(floors<=1){
-        alert("Floors should be >=2");
-        return;
-    } else if(floors<lifts){
-        alert("No of lifts cannot be greater than that of floors");
-        return;
-    } else if(lifts < 1){
-        alert("There should be atleast 1 lift for the simulation");
-        return;
-    }
+    
 
     for(let i=floors;i>=1;i--){
         const floor = document.createElement("div");
@@ -123,7 +114,19 @@ const createUI = () => {
 
 
 const simulate = () => {
+    const floors = document.querySelector("#floors").value;
+    if(floors<=1){
+        alert("Floors should be >=2");
+        return;
+    } else if(floors<lifts){
+        alert("No of lifts cannot be greater than that of floors");
+        return;
+    } else if(lifts < 1){
+        alert("There should be atleast 1 lift for the simulation");
+        return;
+    }
     createUI();
+
     const buttons = document.getElementsByClassName("button");
  
     const lifts = Array.from(document.querySelectorAll(".lift"));
