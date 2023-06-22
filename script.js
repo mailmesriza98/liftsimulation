@@ -119,9 +119,9 @@ function resetSimulation() {
     // Reset all variables and clear the HTML elements
     liftQueue=[];
     console.log("hii");
-    const floorscontainer = document.querySelector("#floors");
-    const liftscontainer = document.querySelector("#lifts");
-    
+    const floorscontainer = document.getElementById("#floors");
+    const liftscontainer = document.getElementById("#lifts");
+    console.log(floorscontainer);
     floorscontainer.innerText = "";
     liftscontainer.innerText = "";
   
