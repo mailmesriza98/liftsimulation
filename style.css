@@ -53,3 +53,13 @@ input[type="submit"] {
 .custom-button:hover {
   background-color: darkgreen;
 }
+
+@media (width <= 380px) {
+
+  html{
+      font-size: 10px;
+  }
+  /* .lift{
+    width:50%;
+  } */
+}
